@@ -1,0 +1,17 @@
+﻿using System;
+
+namespace _3_CodeFist
+{
+    /*CodeFirst
+      İşe yazarak başladığımız için Model'i oluşturacak Class'ları elle yazarız, Entity Framework Model'i ve veri tabanını otomatik olarak oluşturur. DbContext Class'ı oluşturmak için EntityFramework Assembly'si ile gelen DbContext Class'ında türeyen bir Class oluşturmalıyız. Oluşturduğumuz DbContext Class'ına eklediğimiz üyeler veri tabanına ait nesnelere (Table, Procedure,View,Function,vs..) çevirilirken, Tabloları tanımladığımız Class'ara eklediğimiz üyeler ise tablolara ait nesneler(Column, Constraint,vs..) olarak çevrilir. Veri tabanına tablo eklemeyi istiyorsak, oluşturduğumuz DbContext Class'ına DbSet<TEntity> türünde Property'i eklemeliyiz. Generic Type olarak tablo şemasını oluşturduğumuz Class'ı vermemiz gerekir. Ayrıcte bu Property'i veri tabandan veri almak ve eklemek için de kullanacağız. Tabloları oluşturduğumuz Class'lara eklediğimiz simple Type Property'ler, tablo sütunları oluştururken,Complext Type Property'ler ise Foreign Key Constraint oluşturur. Oluşturduğumuz DbContect Class'ının kullanacağı ConnectionString'i belirlemek için Config dosyasında oluşturacağımız ConnectionString'in adı ile oluşturduğumuz DbContext Class'ının adı aynı olmalı. İşlemleri tamamladıktan sonra uygulama DbContext nesnesini çalıştığı an veri tabanı oluşturulur ve nesne üzerinde yapılan işlemler veri tabanına uygulanır. Veri tabanıyla ilgili işlemleri uygulamanın CodeBehind kısmında yapabilirdik. Fakat Veri tabanı üzerinde çalışan işlemleri ile uygulama işlemlerinin birbirinden bağımızsız olması iyidir. 
+     Not: EntityFrameWork'ün oluşturacağı veri tabanı önceden oluşturulmuşsa, hata alırız.
+     Not: Foreing Key oluşturmak için sadece bir Navigation Property'i yeter. Property'nin dönüş türüne öre Foreing Key'in hangi tabloya ekleneceği hangi tablonun Primarty Key kullanılacağı kolayca belirlenebilir.
+     */
+    /*4.Ders Customizing Table,Columns Names when using Code First
+      Entity Framework tabloları oluşturmak için Class değerlerini kullanır. Oluşturulacak tablo adını değiştirmek için Table Attribute'unu, sütun adını değiştirmek için Column Attribute'unu kullanabiliriz. Ayrıca Navigation Property'ler Foreign Key oluşturur ama Foreign Key'in eklendiği tabloya birde sütun ekler. Bu sütunun adını kontrol edemeyiz Fakat ForeingKey Attribute'unu kullanarak yeni bir tane sütun oluşturulmak yerine var olan bir sütunun kullanılmasını sağlayabiliriz. Yapmamız gereken şey Property adını Attribute'a vermek. Tabi Property'nin türü int olmalıdır. ForeignKey Attribute'u System.ComponentModel.DataAnnotations.Schema Namespace'i içinde bulunur.
+      
+      Not:Daha önceden tabloları oluşturduktan sonra tablo MetaData'sı üzerinde değişiklik yapar ve uygulamayı çalıştırırsak, hata alırız. Bu sorunu 5. ve 6. derslerde çözeceğiz.
+      -The model backing the '...DBontext' context has changed since the database was created. Consider using Code Fist migrations to update the database(http://go.microsoft.com/fwlink/?LinkId=238369)(oluşturulan tablodan değişik Code barındırdığımız için bu oldu.) Bir sonraki derste bu hatayı düzeltecek. Şimdilik veri tabanından tablosu siliyor. 
+     */
+    public partial class WebForm1 : System.Web.UI.Page { protected void Page_Load(object sender, EventArgs e) { } }
+}
